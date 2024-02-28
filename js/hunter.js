@@ -1,5 +1,5 @@
-const loadPhone = async () =>{
-    const res = await fetch('https://openapi.programming-hero.com/api/phones?search=iphone');
+const loadPhone = async (inputText) =>{
+    const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${inputText}`);
     const phonesObj = await res.json();
     const phones = phonesObj.data;
     displayPhones(phones)
@@ -9,9 +9,10 @@ loadPhone();
 
 const displayPhones = (phones) =>{
     const phonesContainer = document.getElementById('phone-container');
+    phonesContainer.innerHTML = ``
     phones.forEach(phone => {
         const div = document.createElement('div');
-        div.classList = `card w-96 bg-base-100 shadow-xl`
+        div.classList = `card bg-base-100 shadow-xl`
         div.innerHTML = `
         <figure><img src="${phone.image}" alt="Shoes" /></figure>
         <div class="card-body text-center">
@@ -25,4 +26,12 @@ const displayPhones = (phones) =>{
         `
         phonesContainer.appendChild(div)
     })
+}
+
+const clickHandler = () =>{
+    const getInputField = document.getElementById('inputText');
+    const getInputText = getInputField.value;
+    loadPhone(getInputText);
+    console.log(getInputText);
+
 }

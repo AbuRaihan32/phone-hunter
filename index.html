@@ -12,13 +12,35 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="w-11/12 lg:mx-auto">
+<body class="w-11/12 mx-auto">
     <header class="mb-6">
         <h1 class="text-5xl text-lime-500 text-center"> Welcome To Our Phone Hunter </h1>
     </header>
-    <main>
+    <main class="w-11/12 mx-auto">
+        <!-- input search -->
+        <div class="flex gap-4 mb-7 flex-col lg:flex-row md:flex-row">
+            <label class="input input-bordered flex items-center flex-1">
+                <input id="inputText" type="text" class="grow" placeholder="Search" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
+                    <path fill-rule="evenodd"
+                        d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                        clip-rule="evenodd" />
+                </svg>
+            </label>
+            <div class="">
+                <button onclick="clickHandler()" class="btn btn-accent w-full">Search</button>
+            </div>
+        </div>
+
+
+        <!-- Search result -->
         <section>
             <div id="phone-container" class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+            </div>
+
+            <!-- show more -->
+            <div id="showBtn" class="hidden w-full mt-5">
+                <button onclick="showBtnClick()" class="btn btn-accent w-full">Show More</button>
             </div>
         </section>
     </main>
