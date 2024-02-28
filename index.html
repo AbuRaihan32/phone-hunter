@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone Hunter</title>
+
+    <!-- daisyUI & Tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Hello World</h1>
 
+<body class="w-11/12 lg:mx-auto">
+    <header class="mb-6">
+        <h1 class="text-5xl text-lime-500 text-center"> Welcome To Our Phone Hunter </h1>
+    </header>
+    <main>
+        <section>
+            <div id="phone-container" class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+            </div>
+        </section>
+    </main>
+    <footer>
 
+    </footer>
 
 
 
     <!-- scripts -->
     <script src="js/hunter.js"></script>
 </body>
+
 </html>
